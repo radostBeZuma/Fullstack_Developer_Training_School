@@ -1,0 +1,168 @@
+.homework {
+	display: flex;
+}
+
+.homework__wrapper {
+	flex-basis: 1365px;
+	margin: 30px 40px 0 340px;
+	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-user__wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav {
+	flex-basis: 80%;
+	margin-bottom: 25px;
+}
+
+.user {
+	flex-basis: 20%;
+}
+
+.nav__link {
+	display: inline-block;
+	margin-bottom: 5px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.08em;
+	color: var(--primary-disable);
+}
+
+.nav__link_active {
+	color: var(--primary-color);
+}
+
+.polygon {
+	margin: 0 10px;
+}
+
+.user__name-user {
+	text-align: right;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.04em;
+}
+
+.user__role-user {
+	font-weight: 500;
+	line-height: 170%;
+	text-align: right;
+	color: var(--color-blue);
+}
+
+.homework__title {
+	font-weight: 800;
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+
+.homework__subtitle {
+	font-weight: 800;
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+
+.homework__link-downoload {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--color-blue);
+}
+
+.homework__error {
+	margin-bottom: 20px;
+	color: var(--color-red);
+}
+
+.homework__form-wrap {
+	max-width: 945px;
+	width: 100%;
+	padding: 25px;
+	border-radius: 20px;
+	border: 1px solid rgba(43, 47, 61, 0.2);
+}
+
+.homework__fake-input {
+	max-width: 475px;
+	width: 100%;
+	margin-bottom: 20px;
+	border: none;
+	background-color: var(--primary-scroll-card-hover);
+	border-radius: 10px;
+	font-size: 16px;
+}
+
+.homework__input {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+}
+
+.homework__file-inner {
+	padding: 15px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.homework__file-name {
+	color: rgba(43, 47, 61, 0.5);
+	font-size: 16px;
+}
+
+.homework__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	background-color: var(--white-color);
+}
+
+.homework__textarea {
+	max-width: 475px;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	resize: vertical;
+	background-color: var(--primary-scroll-card-hover);
+	border: none;
+	font-size: 16px;
+	border-radius: 20px;
+}
+
+.homework__textarea:focus {
+	outline: none;
+}
+
+.homework__wrap-submit-btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.homework__submit-btn {
+	padding: 20px 20px;
+	background-color: var(--primary-color);
+	border: none;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--white-color);
+	border: 1px solid var(--primary-color);
+	transition: background 1s, color 1s;
+}
+
+.homework__submit-btn:hover {
+	background-color: var(--white-color);
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+
+}

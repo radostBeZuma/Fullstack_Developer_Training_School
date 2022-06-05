@@ -1,0 +1,252 @@
+.main {
+	display: flex;
+}
+
+.main__wrapper {
+	flex-basis: 1365px;
+	margin: 30px 40px 0 340px;
+	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-user__wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav__link {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.08em;
+	color: var(--primary-disable);
+}
+
+.nav__link_active {
+	color: var(--primary-color);
+}
+
+.polygon {
+	margin: 0 10px;
+}
+
+.user__name-user {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.04em;
+}
+
+.user__role-user {
+	font-weight: 500;
+	line-height: 170%;
+	text-align: right;
+	color: var(--color-blue);
+}
+
+.greeting__wrap {
+	margin-top: 15px;
+}
+
+.greeting__text {
+	font-weight: 800;
+	font-size: 20px;
+	line-height: 150%;
+	letter-spacing: 0.08em;
+}
+
+.date__wrap {
+	margin-top: 25px;
+}
+
+.date__text {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+.directions__wrap {
+	min-height: 560px;
+	margin-top: 20px;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.05);
+	border-radius: 20px;
+
+	transition: min-height 2s;
+}
+
+.directions__wrap._active {
+	min-height: 0px;
+}
+
+.directions__inner-title-btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px;
+}
+
+.directions__all-courses._active {
+	display: none;
+}
+
+.directions__title {
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: 0.08em;
+}
+
+.directions__btn {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-color: var(--primary-color);
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 1s;
+}
+
+.directions__triangle {
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+	border-left: 5px solid var(--white-color);
+	border-bottom: 5px solid var(--white-color);
+	transform: rotate(-45deg);
+}
+
+.directions__btn._active {
+	transform: rotate(180deg);
+}
+
+.name-fields__wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 50px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.name-fields__inner {
+	flex-basis: 380px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.name-fields__text {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 170%;
+	color: var(--primary-disable);
+}
+
+.name-fields__text_count {
+	margin-right: 45px;
+}
+
+.directions__courses {
+	padding-right: 35px;
+}
+
+.directions__courses__wrap {
+	padding: 0 15px 0px 25px;
+	overflow-y: auto;
+	max-height: 380px;
+}
+
+.directions__courses__wrap::-webkit-scrollbar {
+	background-color: #ddd;
+	border-radius: 8px;
+	width: 7px;
+	overflow: hidden;
+}
+
+.directions__courses__wrap::-webkit-scrollbar-thumb {
+	background-color: var(--primary-color);
+	border-radius: 4px;
+}
+
+.card-course__link-course {
+	text-decoration: none;
+}
+
+.card-course__wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 25px;
+	border-radius: 10px;
+}
+
+.card-course:not(:first-child) {
+	margin-top: 10px;
+}
+
+.card-course__wrap:hover {
+	background-color: var(--color-gray-tabs);
+}
+
+.card-course__name {
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 170%;
+}
+
+.card-course__desc {
+	max-width: 745px;
+	max-height: 110px;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	/* количество строк */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	line-height: 24px;
+	margin-top: 10px;
+}
+
+.card-course__inner:last-child {
+	max-width: 345px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-course__text {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 27.2px;
+	display: flex;
+	align-items: center;
+}
+
+.card-course__text_lesson {
+	margin-right: 15px;
+}
+
+/* error */
+
+.direction__all {
+	height: 470px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.direction__text {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+.direction__link {
+	color: var(--color-blue);
+}

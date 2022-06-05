@@ -1,0 +1,176 @@
+.registration {
+	display: none;
+}
+
+._open {
+	display: block;
+}
+
+.registration__bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.472);
+}
+
+.registration__wrap {
+	min-width: 700px;
+	min-height: 475px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px 90px;
+	background-color: white;
+}
+
+.registration__wrap._ok {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.preloader {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.655);
+}
+
+.preloader._open {
+	display: flex;
+}
+
+.preloader__text {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.preloader__circle {
+	width: 60px;
+	height: 60px;
+
+	border-radius: 100%;
+	border-top: 5px solid var(--primary-color);
+	/* border-top: 2px solid black; */
+	animation: load 2s infinite;
+}
+
+@keyframes load {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+.registration__exit {
+	cursor: pointer;
+	position: absolute;
+	top: 15px;
+	right: 20px;
+}
+
+.registration__exit svg {
+	width: 40px;
+	height: 40px;
+}
+
+.registration__title {
+	text-align: center;
+}
+
+.form__wrap {
+	margin-top: 50px;
+	width: 700px;
+	display: flex;
+	flex-direction: column
+}
+
+.form__input {
+	margin-bottom: 35px;
+	height: 40px;
+	border: none;
+	border-bottom: 1px solid var(--primary-color);
+	font-size: 18px;
+}
+
+.form__input:focus {
+	outline: none;
+}
+
+.form__error {
+	margin-bottom: 10px;
+	color: red;
+	font-size: 16px;
+	text-align: center;
+}
+
+.form__ok {
+	margin-bottom: 10px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.form__bottom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form__submit {
+	width: 150px;
+	font-size: 16px;
+	margin-bottom: 25px;
+}
+
+.form__text {
+	font-size: 16px;
+}
+
+.form__link {
+	cursor: pointer;
+	background-color: transparent;
+	font-weight: 600;
+	font-size: 14px;
+	color: #0c226d;
+	border: none;
+	border-bottom: 1px solid #0c226d;
+}
+
+.rigit__t {
+	display: none;
+}
+
+.rigit__t h3 {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.rigit__t p {
+	max-width: 600px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.rigit__t._open {
+	display: block;
+}

@@ -1,0 +1,157 @@
+.header {
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--white-color);
+	border-bottom: 1px solid var(--header-border);
+}
+
+.header__container {
+	max-width: 1470px;
+	padding: 0 15px;
+	height: 60px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__leftside {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	margin-right: 90px;
+}
+
+.logo__link {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: 0.04em;
+	color: var(--black-color);
+	text-decoration: none;
+}
+
+.menu {
+	flex-basis: 390px;
+}
+
+.menu__list {
+	width: 390px;
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+}
+
+.menu__link {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	color: var(--primary-disable);
+	transition: all 0.3s;
+}
+
+.menu__link:hover {
+	color: var(--black-color);
+}
+
+.header__rightside {
+	position: relative;
+}
+
+.header__rightside-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__login-link {
+	width: 90px;
+	height: 45px;
+	background: var(--primary-color);
+	color: var(--white-color);
+	border: none;
+	margin-right: 20px;
+	font-weight: 700;
+	transition: background 1s, color 1s;
+}
+
+.header__login-link:hover {
+	background: var(--white-color);
+	color: var(--primary-color);
+	border: 1px solid var(--primary-disable);
+}
+
+.header__registr-link {
+	width: 150px;
+	height: 45px;
+	background: var(--primary-color);
+	color: var(--white-color);
+	border: none;
+	font-weight: 700;
+	transition: background 1s, color 1s;
+}
+
+.header__registr-link:hover {
+	background: var(--white-color);
+	color: var(--primary-color);
+	border: 1px solid var(--primary-disable);
+}
+
+.header__user-name {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.04em;
+}
+
+.menu-user {
+	visibility: hidden;
+}
+
+._visible {
+	visibility: visible;
+}
+
+.menu-user__wrap {
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 250px;
+	background-color: var(--white-color);
+}
+
+.menu-user__text {
+	padding: 10px;
+	text-align: right;
+	font-size: 16px;
+}
+
+.menu-user__link {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	color: var(--primary-disable);
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+.menu-user__link:hover {
+	color: var(--black-color);
+}
+
+.menu-user__link_red {
+	color: rgba(255, 0, 0, 0.6);
+}
+
+.menu-user__link_red:hover {
+	color: red;
+}

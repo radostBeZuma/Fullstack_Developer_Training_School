@@ -1,0 +1,155 @@
+.lessons {
+	display: flex;
+}
+
+.lessons__wrap {
+	flex-basis: 1365px;
+	margin: 30px 40px 0 340px;
+	/* padding: 0 px; */
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-user__wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav__link {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.08em;
+	color: var(--primary-disable);
+}
+
+.nav__link_active {
+	color: var(--primary-color);
+}
+
+.polygon {
+	margin: 0 10px;
+}
+
+.user__name-user {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.04em;
+}
+
+.user__role-user {
+	font-weight: 500;
+	line-height: 170%;
+	text-align: right;
+	color: var(--color-blue);
+}
+
+.lessons__head {
+	margin: 25px 0 15px;
+	font-weight: 800;
+}
+
+.lessons__lang {
+	margin-bottom: 10px;
+}
+
+.lessons__teacher {
+	margin-bottom: 10px;
+}
+
+.lessons__desc-les {
+	margin-bottom: 10px;
+}
+
+
+.lessons__subtitle {
+	font-weight: 700;
+	font-size: 16px;
+	color: var(--primary-disable);
+}
+
+.lessons__sub-desc {
+	font-weight: 800;
+	font-size: 16px;
+	margin-left: 10px;
+}
+
+.lessons__desc {
+	margin-bottom: 25px;
+	line-height: 200%;
+}
+
+.list-lessons__info-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 25px;
+	border: 1px solid rgba(43, 47, 61, 0.2);
+}
+
+.list-lessons__head {
+	flex-basis: 45%;
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.08em;
+}
+
+.list-lessons__info-inner {
+	flex-basis: 55%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.list-lessons__amount-lesson {
+	margin-right: 30px;
+}
+
+.list-lessons__text-exp {
+	font-weight: 800;
+}
+
+.list-lessons__list-wrap {
+	margin-top: 25px;
+}
+
+.list-lessons__card-line-wrap {
+	padding: 10px 25px;
+}
+
+.list-lessons__card-line-wrap:hover {
+	background-color: var(--primary-scroll-card-hover);
+}
+
+.list-lessons__card-line:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.list-lessons__card-link {
+	text-decoration: none;
+}
+
+.list-lessons__card-text {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 170%;
+}
+
+.list-lessons__duration-lesson {
+	display: none;
+	margin-left: 5px;
+	font-weight: 600;
+	color: var(--color-blue);
+}
+
+.list-lessons__check-lesson {
+	display: none;
+	margin-left: 10px;
+	font-size: 14px;
+	color: var(--color-green-ok);
+}
+
+.list-lessons__check-lesson._checked {
+	display: inline;
+}
