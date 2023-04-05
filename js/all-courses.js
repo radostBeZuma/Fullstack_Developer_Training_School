@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			cardId = card.dataset.card;
 
 			let http = new XMLHttpRequest();
-			let url = 'http://diploma/directions/save';
+			let url = '/directions/save';
 			let params = 'id=' + cardId;
 
 			http.open('POST', url, true);
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 						let parser = new DOMParser();
 						let doc = parser.parseFromString(http.responseText, "text/html");
-						console.log(doc);
 
 						let allParseCard = doc.querySelectorAll("[data-card]");
 
@@ -67,12 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 		if (e.target.classList.contains(`${block}__btn_delete`)) {
-			/*
-				здесь необходимо получить айди удаляемой карты,
-				название курса удаляемого,
-				открыть конфирм-форму
-			*/
-
 			let btnDelete = e.target;
 
 			let cardDirections = btnDelete.closest(`.${block}__card`);
@@ -103,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (e.target.classList.contains('form-confirm__btn_confirm')) {
 					let http = new XMLHttpRequest();
 
-					let url = 'http://diploma/directions/delete';
+					let url = '/directions/delete';
 					let params = 'id=' + cardDeleteId;
 
 					http.open('POST', url, true);
