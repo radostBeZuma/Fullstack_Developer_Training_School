@@ -14,7 +14,7 @@ class DB {
 
 	private function __construct()
 	{
-		$this->conn = new mysqli('localhost', 'root', 'root', 'education');
+		$this->conn = new mysqli('localhost', 'root', '', 'education');
 		$this->conn->query("SET NAMES utf8");
 	}
 
