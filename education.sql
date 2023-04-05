@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 16 2022 г., 21:22
--- Версия сервера: 8.0.19
--- Версия PHP: 7.1.33
+-- Время создания: Апр 05 2023 г., 23:00
+-- Версия сервера: 5.6.51
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `courses` (
-  `id_course` int NOT NULL COMMENT 'Автоинкрементное значение',
+  `id_course` int(11) NOT NULL COMMENT 'Автоинкрементное значение',
   `course_name` varchar(80) NOT NULL COMMENT 'Имя курса',
   `recital` text NOT NULL COMMENT 'Описание курса',
-  `lang` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Язык для изучения',
+  `lang` varchar(15) NOT NULL COMMENT 'Язык для изучения',
   `img` text NOT NULL,
-  `id_user` int NOT NULL
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -54,15 +54,15 @@ INSERT INTO `courses` (`id_course`, `course_name`, `recital`, `lang`, `img`, `id
 --
 
 CREATE TABLE `lessons` (
-  `id_lesson` int NOT NULL,
-  `name_lesson` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Название урока',
-  `number` int NOT NULL COMMENT 'Номер урока в курсах',
+  `id_lesson` int(11) NOT NULL,
+  `name_lesson` varchar(200) NOT NULL COMMENT 'Название урока',
+  `number` int(11) NOT NULL COMMENT 'Номер урока в курсах',
   `url_video` text NOT NULL COMMENT 'Ссылка на видео',
-  `url_poster` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT 'Ссылка на картинку для видео',
-  `url_lecture` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT 'Лекция html',
+  `url_poster` text COMMENT 'Ссылка на картинку для видео',
+  `url_lecture` text COMMENT 'Лекция html',
   `url_homework` text COMMENT 'Домашнее задание',
   `recital` text NOT NULL COMMENT 'Описание урока',
-  `id_course` int NOT NULL COMMENT 'Ссылка на курс'
+  `id_course` int(11) NOT NULL COMMENT 'Ссылка на курс'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -104,10 +104,10 @@ INSERT INTO `lessons` (`id_lesson`, `name_lesson`, `number`, `url_video`, `url_p
 --
 
 CREATE TABLE `task` (
-  `id_task` int NOT NULL,
+  `id_task` int(11) NOT NULL,
   `text_task` text NOT NULL COMMENT 'Задание ',
   `answer` text NOT NULL COMMENT 'Ответ на задание',
-  `id_lesson` int NOT NULL COMMENT 'Ссылка на таблицу с уроками'
+  `id_lesson` int(11) NOT NULL COMMENT 'Ссылка на таблицу с уроками'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -173,11 +173,11 @@ INSERT INTO `task` (`id_task`, `text_task`, `answer`, `id_lesson`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id_user` int NOT NULL,
+  `id_user` int(11) NOT NULL,
   `user_name` varchar(20) NOT NULL COMMENT 'Имя пользователя',
   `surname` varchar(30) NOT NULL COMMENT 'Фамилия пользователя',
   `login` varchar(20) NOT NULL COMMENT 'Логин пользователя',
-  `password` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Пароль',
+  `password` varchar(15) NOT NULL COMMENT 'Пароль',
   `role` varchar(15) NOT NULL COMMENT 'Роль пользователя в системе'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -192,11 +192,7 @@ INSERT INTO `users` (`id_user`, `user_name`, `surname`, `login`, `password`, `ro
 (14, 'Ксения', 'Антонова', 'ksanx', '123456', 'преподаватель'),
 (16, 'Денис', 'Северин', 'req', '123456', 'студент'),
 (17, 'Светлана', 'Горобец', 'korica', '123456', 'преподаватель'),
-(18, 'Мария', 'Пахоменкова', 'masha_p', '123456', 'преподаватель'),
-(19, 'Дмитрий', 'Дроздов', 'drozdov', '123456', 'студент'),
-(47, 'Александр', 'Филиппов', 'ewq', 'weqw122412', 'студент'),
-(48, 'adada', 'dasda', 'sdasds', 'sdadsa', 'студент'),
-(49, 'weq', 'ewqwe', 'wqewq', 'wewqewq', 'студент');
+(18, 'Мария', 'Пахоменкова', 'masha_p', '123456', 'преподаватель');
 
 -- --------------------------------------------------------
 
@@ -205,8 +201,8 @@ INSERT INTO `users` (`id_user`, `user_name`, `surname`, `login`, `password`, `ro
 --
 
 CREATE TABLE `users_courses` (
-  `id_user` int NOT NULL,
-  `id_course` int NOT NULL
+  `id_user` int(11) NOT NULL,
+  `id_course` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -214,14 +210,7 @@ CREATE TABLE `users_courses` (
 --
 
 INSERT INTO `users_courses` (`id_user`, `id_course`) VALUES
-(2, 3),
-(17, 1),
-(1, 5),
-(1, 4),
-(1, 1),
-(1, 3),
-(16, 1),
-(19, 1);
+(1, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -270,25 +259,25 @@ ALTER TABLE `users_courses`
 -- AUTO_INCREMENT для таблицы `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id_course` int NOT NULL AUTO_INCREMENT COMMENT 'Автоинкрементное значение', AUTO_INCREMENT=8;
+  MODIFY `id_course` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Автоинкрементное значение', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id_lesson` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_lesson` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `task`
 --
 ALTER TABLE `task`
-  MODIFY `id_task` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -298,26 +287,26 @@ ALTER TABLE `users`
 -- Ограничения внешнего ключа таблицы `courses`
 --
 ALTER TABLE `courses`
-  ADD CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
 -- Ограничения внешнего ключа таблицы `lessons`
 --
 ALTER TABLE `lessons`
-  ADD CONSTRAINT `lessons_ibfk_1` FOREIGN KEY (`id_course`) REFERENCES `courses` (`id_course`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `lessons_ibfk_1` FOREIGN KEY (`id_course`) REFERENCES `courses` (`id_course`);
 
 --
 -- Ограничения внешнего ключа таблицы `task`
 --
 ALTER TABLE `task`
-  ADD CONSTRAINT `task_ibfk_1` FOREIGN KEY (`id_lesson`) REFERENCES `lessons` (`id_lesson`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `task_ibfk_1` FOREIGN KEY (`id_lesson`) REFERENCES `lessons` (`id_lesson`);
 
 --
 -- Ограничения внешнего ключа таблицы `users_courses`
 --
 ALTER TABLE `users_courses`
-  ADD CONSTRAINT `users_courses_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `users_courses_ibfk_2` FOREIGN KEY (`id_course`) REFERENCES `courses` (`id_course`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `users_courses_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `users_courses_ibfk_2` FOREIGN KEY (`id_course`) REFERENCES `courses` (`id_course`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
